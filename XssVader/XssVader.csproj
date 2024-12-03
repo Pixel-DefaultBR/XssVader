@@ -14,7 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Database\payloadTemplates.txt" />
     <None Remove="Database\WAFSign.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Database\payloadTemplates.txt" />
   </ItemGroup>
 
   <ItemGroup>

