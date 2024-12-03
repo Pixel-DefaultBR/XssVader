@@ -27,7 +27,15 @@ namespace XssVader.Controllers
             _logFilePath = Path.Combine(projectDirectory, "Logs", "log.txt");
             _logFilePath = Path.GetFullPath(_logFilePath);
 
-            Directory.CreateDirectory(_logFilePath);
+            try
+            {
+                Directory.CreateDirectory(_logFilePath);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error creating log file: " + e.Message);
+            }
+            
         }
 
         public void Log(string message)

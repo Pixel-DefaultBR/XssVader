@@ -1,29 +1,59 @@
-﻿using XssVader.Controllers;
+﻿using System;
+using System.Threading.Tasks;
+using XssVader.Controllers;
 
 class Program
 {
     static async Task Main(string[] args)
     {
-        string url = "http://www.bancocn.com/cat.php?id=1";
+        BannerController.ShowBanner();
 
-        ExploitController exploit = new ExploitController(url);
-        MessageController messageController = new MessageController();
-        WAFController wAFController = new WAFController(url);
+        Console.Write("[+] Target (https://www.example.com/?param=1): ");
+        string url = Console.ReadLine() ?? string.Empty;
 
-        var (isWAF, WAF) = wAFController.WAFDetection();
-
-        if (isWAF)
+        if (string.IsNullOrWhiteSpace(url))
         {
-            Console.Write("[!] WAF Detected: ");
-            messageController.ShowMessageCyan(WAF);
-            Console.WriteLine();
-        }
-        else
-        {
-            messageController.ShowMessageMagenta("[+] No WAF detected.");
-            Console.WriteLine();
+            Console.WriteLine("[!] URL is required.");
+            return;
         }
 
-        await exploit.ReflectedXss();
+        if (!Uri.IsWellFormedUriString(url, UriKind.Absolute) || (!url.StartsWith("http://") && !url.StartsWith("https://")))
+        {
+            Console.WriteLine("[!] Invalid URL format. Ensure it starts with http:// or https://");
+            return;
+        }
+
+        if (!url.Contains("?"))
+        {
+            Console.WriteLine("[!] URL does not contain query string.");
+            return;
+        }
+
+        try
+        {
+            var exploit = new ExploitController(url);
+            var wAFController = new WAFController(url);
+            var messageController = new MessageController();
+
+            var (isWAF, WAF) = wAFController.WAFDetection();
+
+            if (isWAF)
+            {
+                messageController.ShowMessageCyan($"[!] WAF Detected: {WAF}");
+                Console.WriteLine();
+            }
+            else
+            {
+                messageController.ShowMessageMagenta("[+] No WAF detected.");
+                Console.WriteLine();
+            }
+
+            await exploit.ReflectedXss();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"[!] An error occurred: {e.Message}");
+            return;
+        }
     }
 }
