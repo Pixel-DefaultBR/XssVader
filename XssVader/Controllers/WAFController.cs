@@ -47,7 +47,9 @@ namespace XssVader.Controllers
                 string code = wafSignature.Value.code.ToString();
                 string page = wafSignature.Value.page.ToString();
 
-                if ((header.Contains(headers) && headers != "") || (header.Contains(code) && code != "") || (header.Contains(page) && page != ""))
+                if ((header.Contains(headers) && headers != "")
+                    || (header.Contains(code) && code != "")
+                    || (header.Contains(page) && page != ""))
                 {
                     isWAF = true;
                     WAF = wafSignature.Name;
