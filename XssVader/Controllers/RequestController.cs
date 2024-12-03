@@ -20,6 +20,7 @@ namespace XssVader.Controllers
         public async Task<string> RequestHandle(string url)
         {
             using (HttpResponseMessage response = await _client.GetAsync(url))
+
             {
                 response.EnsureSuccessStatusCode();
 
