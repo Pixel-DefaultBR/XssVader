@@ -25,7 +25,7 @@ class Program
 
         if (!url.Contains("?"))
         {
-            Console.WriteLine("[!] URL does not contain query string.");
+            Console.WriteLine("[!] URL does not contain query string. (/cat.php?=1)");
             return;
         }
 
@@ -39,13 +39,11 @@ class Program
 
             if (isWAF)
             {
-                messageController.ShowMessageCyan($"[!] WAF Detected: {WAF}");
-                Console.WriteLine();
+                messageController.ShowMessageMagenta($"[!] WAF Detected: {WAF}");
             }
             else
             {
-                messageController.ShowMessageMagenta("[+] No WAF detected.");
-                Console.WriteLine();
+                messageController.ShowMessageGreen("[+] No WAF detected.");
             }
 
             await exploit.ReflectedXss();

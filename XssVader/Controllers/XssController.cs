@@ -12,7 +12,7 @@ namespace XssVader.Controllers
     {
         private readonly XssModel _xssReflected;
         private readonly XssModel _xssDOMBased;
-        private readonly string _projectDirectory;
+        private readonly string? _projectDirectory;
 
         public XssController()
         {
@@ -24,33 +24,27 @@ namespace XssVader.Controllers
                 .Parent?
                 .FullName;
         }
-
-        public List<string> GetReflectedPayloads()
+        public XssModel GetReflectedPayloads()
         {
-
-
-            _xssReflected.Type = "REFLECETED";
-            _xssReflected.Description = "Reflected XSS payloads";
-
             if (_projectDirectory == null)
             {
                 throw new InvalidOperationException("Payloads could not be loaded.");
             }
 
-            List<string> randomPayloads = GenRandomPayloads();
+            _xssReflected.Type = "Reflected";
+            _xssReflected.Description = "Reflected XSS payloads";
+            _xssReflected.Payloads = GenRandomPayloads();
 
-            return randomPayloads;
-        } 
+            return _xssReflected;
+        }
         public List<string> ReadPayloadFile(string filePath)
         {
             if (File.Exists(filePath))
             {
                 return File.ReadAllLines(filePath).ToList();
             }
-            else
-            {
-                throw new FileNotFoundException("O arquivo especificado não foi encontrado.", filePath);
-            }
+
+            throw new FileNotFoundException("O arquivo especificado não foi encontrado.", filePath);
         }
         public List<string> GenRandomPayloads()
         {
@@ -63,7 +57,7 @@ namespace XssVader.Controllers
             Random random = new Random();
             List<string> generatedPayloads = new List<string>();
 
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 100; i++)
             {
                 foreach (string template in payloadTemplates)
                 {
@@ -78,7 +72,7 @@ namespace XssVader.Controllers
                         .Replace("{evt}", evt)
                         .Replace("{pay}", pay);
 
-                    generatedPayloads.Add(payload);
+                     generatedPayloads.Add(payload);
                 }
             }
 

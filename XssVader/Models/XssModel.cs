@@ -11,5 +11,10 @@ namespace XssVader.Models
         public string Type { get; set; }
         public string Description { get; set; }
         public List<string> Payloads { get; set; }
+
+        public XssModel()
+        {
+            Payloads = new List<string>();  
+        }
     }
 }
