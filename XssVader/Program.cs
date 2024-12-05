@@ -32,18 +32,15 @@ class Program
         try
         {
             var exploit = new ExploitController(url);
-            var wAFController = new WAFController(url);
+            var wafController = new WAFController(url);
             var messageController = new MessageController();
 
-            var (isWAF, WAF) = wAFController.WAFDetection();
+            bool isWAF = wafController.WAFDetection();
 
             if (isWAF)
             {
-                messageController.ShowMessageMagenta($"[!] WAF Detected: {WAF}");
-            }
-            else
-            {
-                messageController.ShowMessageGreen("[+] No WAF detected.");
+                messageController.ShowMessageMagenta("[!] Exiting...");
+                return;
             }
 
             await exploit.ReflectedXss();

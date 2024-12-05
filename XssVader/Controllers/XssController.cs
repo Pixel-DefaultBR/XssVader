@@ -10,12 +10,15 @@ namespace XssVader.Controllers
 {
     internal class XssController
     {
+        private readonly MessageController _messageController;
         private readonly XssModel _xssReflected;
         private readonly XssModel _xssDOMBased;
         private readonly string? _projectDirectory;
 
         public XssController()
         {
+            _messageController = new MessageController();
+
             _xssReflected = new XssModel();
             _xssDOMBased = new XssModel();
             _projectDirectory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?
@@ -34,6 +37,13 @@ namespace XssVader.Controllers
             _xssReflected.Type = "Reflected";
             _xssReflected.Description = "Reflected XSS payloads";
             _xssReflected.Payloads = GenRandomPayloads();
+
+            var htmlEncodedPayloads = HtmlEncodePayload(_xssReflected);
+
+            foreach (var payload in htmlEncodedPayloads)
+            {
+                _xssReflected.Payloads.Add(payload);
+            }
 
             return _xssReflected;
         }
@@ -57,7 +67,7 @@ namespace XssVader.Controllers
             Random random = new Random();
             List<string> generatedPayloads = new List<string>();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 foreach (string template in payloadTemplates)
                 {
@@ -78,5 +88,12 @@ namespace XssVader.Controllers
 
             return generatedPayloads;
         } 
+        public List<string> HtmlEncodePayload(XssModel xssModel)
+        {
+            _messageController.ShowMessageBlue("[+] Encoding payloads to HTML...");
+            Thread.Sleep(new TimeSpan(0, 0, 10));
+            var payloads = xssModel.Payloads.Select(payload => Uri.EscapeDataString(payload)).ToList();
+            return payloads;
+        }
     }
 }
