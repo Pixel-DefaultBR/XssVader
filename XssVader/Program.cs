@@ -43,6 +43,7 @@ class Program
                 return;
             }
 
+            await exploit.DOMXSS();
             await exploit.ReflectedXss();
         }
         catch (Exception e)

@@ -8,10 +8,10 @@ namespace XssVader.Controllers
     internal class WAFController
     {
         private readonly MessageController _messageController;
+        private readonly RequestController _requestController;
         private readonly string _noise;
         private readonly string _path;
         private readonly string _url;
-        private readonly RequestController _requestController;
         private readonly string _baseDirectory;
         public WAFController(string url)
         {
