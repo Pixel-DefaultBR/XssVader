@@ -44,7 +44,6 @@ namespace XssVader.Controllers
 
             var header = _requestController.GetHeader().Result;
 
-            _messageController.ShowMessageYellow($"[+] Searching for WAF's...");
             Thread.Sleep(new TimeSpan(0, 0, 10));
 
             foreach (var wafSignature in wafSignatures)
@@ -65,12 +64,12 @@ namespace XssVader.Controllers
 
             if (isWAF)
             {
-                _messageController.ShowMessageMagenta($"[!] WAF Detected: {WAF}");
+                _messageController.ShowMessageMagenta($"! WAF Detected: {WAF}");
                 return isWAF;
             }
             else
             {
-                _messageController.ShowMessageGreen("[+] No WAF detected.");
+                _messageController.ShowMessageGreen("+ No WAF detected.");
                 return isWAF;
             }
         }

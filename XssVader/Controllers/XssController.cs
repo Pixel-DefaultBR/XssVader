@@ -98,14 +98,14 @@ namespace XssVader.Controllers
         } 
         public List<string> HtmlEncodePayload(XssModel xssModel)
         {
-            _messageController.ShowMessageBlue("[+] Encoding payloads to HTML...");
+            _messageController.ShowMessageBlue("+ Encoding payloads to HTML...");
             Thread.Sleep(new TimeSpan(0, 0, 10));
             var payloads = xssModel.Payloads.Select(payload => Uri.EscapeDataString(payload)).ToList();
             return payloads;
         }
         public List<string> DoubleHtmlEncodePayload(List<string> payloadList)
         {
-            _messageController.ShowMessageBlue("[+] Double Encoding payloads...");
+            _messageController.ShowMessageBlue("+ Double Encoding payloads...");
             Thread.Sleep(new TimeSpan(0, 0, 10));
             var payloads = payloadList.Select(payload => Uri.EscapeDataString(payload)).ToList();
             return payloads;
