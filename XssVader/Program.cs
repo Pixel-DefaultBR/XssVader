@@ -57,9 +57,9 @@ class Program
             var wafController = new WAFController(url);
             var messageController = new MessageController();
 
-            bool isWAF = wafController.WAFDetection();
+            bool detectedWaf = wafController.WAFDetection();
 
-            if (isWAF)
+            if (detectedWaf)
             {
                 messageController.ShowMessageMagenta("! Exiting...");
                 return;

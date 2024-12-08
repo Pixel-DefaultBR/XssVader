@@ -13,12 +13,14 @@ namespace XssVader.Controllers
         private readonly RequestController _requetController;
         private readonly Uri _uri;
         private readonly string _url;
+        private readonly MessageController _messageController;
 
         public BannerController(string url)
         {
             _url = url;
             _uri = new Uri(url);
             _requetController = new RequestController(url);
+            _messageController = new MessageController();
         }
 
 
@@ -49,9 +51,22 @@ ____  ___  _________ _________     .-.
 
             var matches = Regex.Matches(header, keyValueRegex, RegexOptions.Multiline);
 
+            BannerTamplate(hostName, ipAddress);
+            BannerInfoTamplate(matches);
+        }
+
+        public void BannerTamplate(string hostname, string ip)
+        {
             Console.WriteLine("------------------------------------------------------------");
-            Console.WriteLine($"+ Target Hostname : \u001b[33m{hostName}\u001b[0m");
-            Console.WriteLine($"+ Target IP       : \u001b[33m{ipAddress}\u001b[0m");
+            Console.Write("+ Target Hostname: ");
+            _messageController.ShowMessageBrightBlue(hostname);
+            Console.Write("+ Target IP: ");
+            _messageController.ShowMessageBrightBlue(ip);
+            Console.WriteLine("------------------------------------------------------------");
+        }
+
+        public void BannerInfoTamplate(dynamic matches)
+        {
             foreach (Match match in matches)
             {
                 string key = match.Groups[1].Value;
@@ -59,15 +74,18 @@ ____  ___  _________ _________     .-.
 
                 if (key == "Server" || key == "Date" || key == "X-Powered-By")
                 {
-                    Console.WriteLine($"+ {key,-15} : \u001b[33m{value}\u001b[0m");
+                    Console.Write($"+ {key}: ");
+                    _messageController.ShowMessageBrightYellow($"{value}");
                 }
             }
             Console.WriteLine("------------------------------------------------------------");
         }
+
         public string GetTargetHostname()
         {
             return _uri.Host.Trim('/');
         }
+
         public string GetTargetIpAddress()
         {
             string host = GetTargetHostname();
